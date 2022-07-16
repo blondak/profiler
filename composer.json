@@ -2,12 +2,6 @@
   "name": "website21cz/profiler",
   "description": "Profiler with adapter for Tracy",
   "license": "MIT",
-  "keywords": [
-    "debug",
-    "profiler",
-    "webprofiler",
-    "Tracy"
-  ],
   "authors": [
     {
       "name": "Petr Knap",
@@ -26,16 +20,6 @@
     "petrknap/php-profiler": "^1.1",
     "petrknap/php-singleton": "^1.0"
   },
-  "require-dev": {
-    "tracy/tracy": "*",
-    "nette/di": "*",
-    "nette/bootstrap": "^2.3",
-    "nette/application": "^2.3",
-    "latte/latte": "^2.3",
-    "phpunit/phpunit": "^4.8",
-    "netpromotion/tracy-wrapper": "^1.0",
-    "laravel/lumen-framework": "^5.0"
-  },
   "autoload": {
     "psr-4": {
       "Netpromotion\\Profiler\\": "src/Profiler"
@@ -44,7 +28,6 @@
   "autoload-dev": {
     "psr-4": {
       "Netpromotion\\Profiler\\Test\\": "tests",
-      "Netpromotion\\Profiler\\Demo\\Nette\\": "demo/nette/src"
     }
   }
 }
