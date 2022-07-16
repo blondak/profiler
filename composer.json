@@ -1,5 +1,5 @@
 {
-  "name": "netpromotion/profiler",
+  "name": "website21cz/profiler",
   "description": "Profiler with adapter for Tracy",
   "license": "MIT",
   "keywords": [
@@ -25,11 +25,6 @@
     "php": ">=5.4",
     "petrknap/php-profiler": "^1.1",
     "petrknap/php-singleton": "^1.0"
-  },
-  "conflict-note": "We are using 'conflict' combined with 'require-dev' to '*' as soft require.",
-  "conflict": {
-    "tracy/tracy": "<2.2 || >=3",
-    "nette/di": "<2.2 || >=3"
   },
   "require-dev": {
     "tracy/tracy": "*",
