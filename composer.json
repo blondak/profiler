@@ -24,10 +24,5 @@
     "psr-4": {
       "Netpromotion\\Profiler\\": "src/Profiler"
     }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Netpromotion\\Profiler\\Test\\": "tests",
-    }
   }
 }
