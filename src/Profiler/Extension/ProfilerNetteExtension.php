@@ -59,7 +59,7 @@ class ProfilerNetteExtension extends CompilerExtension
      */
     public function afterCompile(ClassType $class)
     {
-        if (self::isActive()) {
+		if (self::isActive()) {
             $__construct = $class->getMethod("__construct");
             $__construct->setBody(sprintf(
                 "%s::enable();%s",
@@ -70,13 +70,13 @@ class ProfilerNetteExtension extends CompilerExtension
             if ($this->config[self::CONFIG_PROFILE][self::CONFIG_PROFILE_CREATE_SERVICE]) {
                 foreach ($class->getMethods() as $method) {
                     if (preg_match('/^createService/', $method->getName())) {
-                        $createService = &$method;
-                        $createService->setBody(sprintf(
-                            "%s::start(__METHOD__);%s%s::finish(__METHOD__);return \$return;",
-                            self::PROFILER,
-                            str_replace("return ", "\$return = ", $createService->getBody()),
-                            self::PROFILER
-                        ));
+						$start="\Netpromotion\Profiler\Profiler::start(__METHOD__);\n\$is_started=true;\n";
+	                    $end="if(isset(\$is_started)) \Netpromotion\Profiler\Profiler::finish(__METHOD__);\n";
+
+						$body=$method->getBody();
+						$body=$start.$body;
+						$body=str_replace('return',$end."\nreturn",$body);
+						$method->setBody($body);
                     }
                 }
             }
