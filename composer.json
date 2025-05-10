@@ -1,5 +1,5 @@
 {
-  "name": "website21cz/profiler",
+  "name": "blondak/profiler",
   "description": "Profiler with adapter for Tracy",
   "license": "MIT",
   "authors": [
@@ -10,14 +10,13 @@
   ],
   "config": {
     "platform": {
-      "php": "5.4.45",
       "ext-dom": true,
       "ext-mbstring": true
     }
   },
   "require": {
-    "php": ">=5.4",
-    "petrknap/php-profiler": "^1.3",
+    "php": ">=8.1",
+    "petrknap/profiler": "^2.0",
     "petrknap/singleton": "^2.0"
   },
   "autoload": {
